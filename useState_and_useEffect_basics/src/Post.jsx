@@ -7,12 +7,12 @@ const style = {
   margin: 10,
 };
 
-export function PostComponent({ name, subtitle, time, image ,description}) {
+export function PostComponent(props) {
   return (
     <div style={style}>
       <div style={{ display: "flex" }}>
         <img
-          src={image}
+          src={props.image}
           style={{
             width: 40,
             height: 40,
@@ -23,12 +23,12 @@ export function PostComponent({ name, subtitle, time, image ,description}) {
         />
         <div style={{ gap: 2 }}>
           <b style={{ fontSize: 25 }}>{name}</b>
-          <div>{subtitle}</div>
-          {time !== undefined ? <div>{time}</div> : null}
+          <div>{props.subtitle}</div>
+          {time !== undefined ? <div>{props.time}</div> : null}
         </div>
       </div>
       <div style={{marginTop:10}}>
-        {description}
+        {props.description}
       </div>
     </div>
   );
