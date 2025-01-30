@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { PostComponent } from "./Post";
 
+import { Clock } from "./ClockCounter";
+
 function App() {
   return (
     <div style={{ backgroundColor: "#b2bec3", height: "100vh" }}>
@@ -46,7 +48,14 @@ function App() {
           }
         ></PostComponent>
       </div>
-      <ToggleButtonMessage/>
+      <ToggleButtonMessage />
+      
+
+
+      <div>
+        <h1>Clock</h1> 
+        <Clock></Clock>
+      </div>
     </div>
   );
 }
