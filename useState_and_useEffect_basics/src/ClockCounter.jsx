@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function Clock() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const interval = 1000;
 
   //   function increaseCounter() {
@@ -14,16 +14,16 @@ export function Clock() {
 
   // so therefore we write it in the use effect block or function
 
-  useEffect(function () {
-    setInterval(increaseCounter, interval);
+  useEffect(()=> {
+    setInterval(increaseCounter, 1000);
   }, []); // here empty array denotes the dependencies. Now this will mount only one time not everytime when rerendering happens, but it can re-render depending on the dependencies array
 
-  useEffect(
-    function () {
-      console.log("Count Changes to ", count);
-    },
-    [count]
-  ); // it will re-render everytime when count var changes
+//   useEffect(
+//     function () {
+//       console.log("Count Changes to ", count);
+//     },
+//     [count]
+//   ); // it will re-render everytime when count var changes
 
   //   setInterval(() => {    //  ALTERNATIVE METHOND OF WRITING INTERVAL FUNCTION USING ARROW FUNCTION
   //     setCount(count + 1);

@@ -24,7 +24,7 @@ export function PostComponent(props) {
         <div style={{ gap: 2 }}>
           <b style={{ fontSize: 25 }}>{name}</b>
           <div>{props.subtitle}</div>
-          {time !== undefined ? <div>{props.time}</div> : null}
+          {props.time !== undefined ? <div>{props.time}</div> : null}
         </div>
       </div>
       <div style={{marginTop:10}}>
