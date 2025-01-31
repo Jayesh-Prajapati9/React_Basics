@@ -4,8 +4,10 @@ import { PostComponent } from "./Post";
 
 import { Clock } from "./ClockCounter";
 
+
 function App() {
   return (
+
     <div style={{ backgroundColor: "#b2bec3", height: "100vh" }}>
       <div
         style={{
@@ -33,9 +35,7 @@ function App() {
           image={
             "https://plus.unsplash.com/premium_photo-1736782964993-911e37d4657e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           }
-          description={
-            "Follow me for more content on Web dev."
-          }
+          description={"Follow me for more content on Web dev."}
         ></PostComponent>
         <PostComponent
           name={"Raman"}
@@ -43,21 +43,16 @@ function App() {
           image={
             "https://plus.unsplash.com/premium_photo-1736782964993-911e37d4657e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           }
-          description={
-            "Hey check this latest docs of React native"
-          }
+          description={"Hey check this latest docs of React native"}
         ></PostComponent>
       </div>
       <ToggleButtonMessage />
-      
-
-
       <div>
-        <h1>Clock</h1> 
+        <h1>Clock</h1>
         <Clock></Clock>
       </div>
     </div>
-  );
+  )
 }
 
 function ToggleButtonMessage() {
