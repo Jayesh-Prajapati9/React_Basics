@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { json } from "stream/consumers";
 
 function Todo() {
     return (
@@ -24,18 +23,21 @@ function Get_ToDo() {
 
     const [todo, setTodo] = useState(1);
     const [todo_data, setTodo_data] = useState({});
+    const [loading, setLoading] = useState(true);
 
-    useEffect(function () {
-        fetch("https://jsonplaceholder.typicode.com/todos/" + todo).then(
-            async (res) => {
-                const json = await res.json();
-                console.log(json)
-                setTodo_data(json);
-            }
-            
-        );
-        
-    },[todo_data]);
+    useEffect(
+        function () {
+            setLoading(true);
+            fetch("https://jsonplaceholder.typicode.com/todos/" + todo).then(
+                async (res) => {
+                    const rejson = await res.json();
+                    setTodo_data(rejson);
+                    setLoading(false);
+                }
+            );
+        },
+        [todo]
+    );
 
     return (
         <div>
@@ -49,7 +51,7 @@ function Get_ToDo() {
                     ToDo #1
                 </button>
                 <button
-                    onClick={() => {
+                    onClick={function () {
                         setTodo(2);
                     }}
                     style={{ color: todo == 2 ? "brown" : "black" }}
@@ -57,7 +59,7 @@ function Get_ToDo() {
                     ToDo #2
                 </button>
                 <button
-                    onClick={() => {
+                    onClick={function () {
                         setTodo(3);
                     }}
                     style={{ color: todo == 3 ? "blue" : "black" }}
@@ -65,7 +67,7 @@ function Get_ToDo() {
                     ToDo #3
                 </button>
                 <button
-                    onClick={() => {
+                    onClick={function () {
                         setTodo(4);
                     }}
                     style={{ color: todo == 4 ? "green" : "black" }}
@@ -81,6 +83,7 @@ function Get_ToDo() {
                     alignItems: "center",
                 }}
             >
+                {loading ? "Loading" : todo_data.title}
             </div>
         </div>
     );
