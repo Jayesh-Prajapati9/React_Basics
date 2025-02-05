@@ -7,8 +7,8 @@ import Error_Boundary from './Error_Boundary.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Error_Boundary/>
-    {/* <List_And_Keys/> */}
+    {/* <Error_Boundary/> */}
+    <List_And_Keys/>
     {/* <Children/> */}
   </StrictMode>,
 )
