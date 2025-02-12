@@ -15,7 +15,7 @@ function CustomHooks() {
 					setPost(1);
 				}}
 			>
-				For Post 1{" "}
+				For Post 1
 			</button>
 			<br />
 			<br />
@@ -24,7 +24,7 @@ function CustomHooks() {
 					setPost(2);
 				}}
 			>
-				For Post 2{" "}
+				For Post 2
 			</button>
 			<br />
 			<br />
@@ -33,7 +33,7 @@ function CustomHooks() {
 					setPost(3);
 				}}
 			>
-				For Post 3{" "}
+				For Post 3
 			</button>
 			<br />
 			<br />
